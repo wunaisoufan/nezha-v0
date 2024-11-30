@@ -127,21 +127,21 @@ pre_check() {
     fi
 
     if [ -n "$CUSTOM_MIRROR" ]; then
-        GITHUB_RAW_URL="gitee.com/naibahq/nezha/raw/master"
+        GITHUB_RAW_URL="gh.ccie.work/raw.githubusercontent.com/wunaisoufan/nezha-v0/master"
         GITHUB_URL=$CUSTOM_MIRROR
         Get_Docker_URL="get.docker.com"
         Get_Docker_Argu=" -s docker --mirror Aliyun"
         Docker_IMG="registry.cn-shanghai.aliyuncs.com\/naibahq\/nezha-dashboard"
     else
         if [ -z "$CN" ]; then
-            GITHUB_RAW_URL="raw.githubusercontent.com/naiba/nezha/master"
+            GITHUB_RAW_URL="raw.githubusercontent.com/wunaisoufan/nezha-v0/master"
             GITHUB_URL="github.com"
             Get_Docker_URL="get.docker.com"
             Get_Docker_Argu=" "
             Docker_IMG="ghcr.io\/naiba\/nezha-dashboard"
         else
-            GITHUB_RAW_URL="gitee.com/naibahq/nezha/raw/master"
-            GITHUB_URL="gitee.com"
+            GITHUB_RAW_URL="gh.ccie.work/raw.githubusercontent.com/wunaisoufan/nezha-v0/master"
+            GITHUB_URL="gh.ccie.work"
             Get_Docker_URL="get.docker.com"
             Get_Docker_Argu=" -s docker --mirror Aliyun"
             Docker_IMG="registry.cn-shanghai.aliyuncs.com\/naibahq\/nezha-dashboard"
@@ -222,9 +222,9 @@ update_script() {
     #fi
     #echo "当前最新版本为: ${new_version}"
     if [ -z "$CN" ]; then
-        curl -sL https://raw.githubusercontent.com/nezhahq/scripts/main/install.sh -o /tmp/nezha.sh
+        curl -sL https://raw.githubusercontent.com/wunaisoufan/nezha-v0/refs/heads/v0-final/script/install.sh -o /tmp/nezha.sh
     else
-        curl -sL https://gitee.com/naibahq/scripts/raw/main/install.sh -o /tmp/nezha.sh
+        curl -sL https://gh.ccie.work/https://raw.githubusercontent.com/wunaisoufan/nezha-v0/refs/heads/v0-final/script/install.shh -o /tmp/nezha.sh
     fi
     mv -f /tmp/nezha.sh ./nezha.sh && chmod a+x ./nezha.sh
 
